@@ -66,6 +66,21 @@ require("lazy").setup({
     {
       'nvim-lualine/lualine.nvim',
       dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+    {
+      "kdheepak/lazygit.nvim",
+      lazy = true,
+      cmd = {
+          "LazyGit",
+          "LazyGitConfig",
+          "LazyGitCurrentFile",
+          "LazyGitFilter",
+          "LazyGitFilterCurrentFile",
+      },
+      -- optional for floating window border decoration
+      dependencies = {
+          "nvim-lua/plenary.nvim",
+      },
     }
   },
   -- Configure any other settings here. See the documentation for more details.
