@@ -7,6 +7,8 @@ vim.cmd("set number")
 vim.wo.relativenumber = true
 vim.cmd("set cmdheight=0")
 
+vim.cmd("autocmd BufNewFile,BufRead *.svelte setf svelte")
+
 vim.g.mapleader = " "
 
 require("config.lazy")
@@ -19,3 +21,8 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live gr
 vim.keymap.set('n', '<leader>e', ':Neotree position=float<CR>')
 vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>')
 
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'svelte' },
+  callback = function() vim.treesitter.start() end,
+})
