@@ -13,16 +13,25 @@ vim.g.mapleader = " "
 
 require("config.lazy")
 
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Telescope find files" })
+vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 
-vim.keymap.set('n', '<leader>e', ':Neotree position=float<CR>')
-vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>')
+vim.keymap.set("n", "<leader>e", ":Neotree position=float<CR>")
+vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>")
 
+vim.keymap.set("n", "<leader>w", function()
+	require("conform").format({ async = true })
+end, { desc = "Format buffer" })
 
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'svelte' },
-  callback = function() vim.treesitter.start() end,
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "svelte" },
+	callback = function()
+		vim.treesitter.start()
+	end,
 })
+
+local ERROR_CUSTOM_COLOR = "#b544fc"
+vim.api.nvim_set_hl(0, "DiagnosticError", { fg = ERROR_CUSTOM_COLOR })
+vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = ERROR_CUSTOM_COLOR })
