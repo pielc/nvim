@@ -17,8 +17,14 @@ local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 
 vim.keymap.set("n", "<leader>e", ":Neotree position=float<CR>")
+vim.keymap.set("n", "<leader>b", ":Neotree source=buffers position=float<CR>")
+vim.keymap.set("n", "<leader>n", ":bnext<cr>")
+vim.keymap.set("n", "<leader>,", ":bprevious<cr>")
+vim.keymap.set("n", "<leader>;", ":bdelete<cr>")
+
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>")
 
 vim.keymap.set("n", "<leader>w", function()
@@ -35,3 +41,5 @@ vim.api.nvim_create_autocmd("FileType", {
 local ERROR_CUSTOM_COLOR = "#b544fc"
 vim.api.nvim_set_hl(0, "DiagnosticError", { fg = ERROR_CUSTOM_COLOR })
 vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = ERROR_CUSTOM_COLOR })
+
+

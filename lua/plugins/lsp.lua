@@ -6,7 +6,7 @@ return {
 	{
 		"mason-org/mason-lspconfig.nvim",
 		opts = {
-			ensure_installed = { "lua_ls", "svelte-language-server", "prettierd" },
+			ensure_installed = { "lua_ls", "svelte-language-server" },
 		},
 		dependencies = {
 			{ "mason-org/mason.nvim", opts = {} },
@@ -19,8 +19,8 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				svelte = { "prettierd" },
-				javascript = { "prettierd" },
-				typescript = { "prettierd" },
+        javascript = { "prettierd", "prettier", stop_after_first = true },
+        typescript = { "prettierd", "prettier", stop_after_first = true },
 				css = { "prettierd" },
 				html = { "prettierd" },
 			},
