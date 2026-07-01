@@ -42,4 +42,3 @@ local ERROR_CUSTOM_COLOR = "#b544fc"
 vim.api.nvim_set_hl(0, "DiagnosticError", { fg = ERROR_CUSTOM_COLOR })
 vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = ERROR_CUSTOM_COLOR })
 
-

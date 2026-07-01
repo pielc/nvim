@@ -82,13 +82,13 @@ return {
 			highlights = {
 				buffer_selected = {
 					fg = "#000000",
-					bg = "#B6296B",
+					bg = "#EA3387",
 					bold = true,
 					italic = false,
 				},
 				indicator_selected = {
-					fg = "#B6296B",
-					bg = "#B6296B",
+					fg = "#EA3387",
+					bg = "#EA3387",
 				},
 				fill = {
 					bg = "#0E0F11",
@@ -103,19 +103,19 @@ return {
 				},
 				separator_selected = {
 					fg = "#0E0F11",
-					bg = "#B6296B",
+					bg = "#EA3387",
 				},
 				close_button = {
 					bg = "#0E0F11",
 				},
 				close_button_selected = {
-					bg = "#B6296B",
+					bg = "#EA3387",
 				},
 				modified = {
 					bg = "#0E0F11",
 				},
 				modified_selected = {
-					bg = "#B6296B",
+					bg = "#EA3387",
 				},
 			},
 		},

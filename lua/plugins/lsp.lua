@@ -6,11 +6,25 @@ return {
 	{
 		"mason-org/mason-lspconfig.nvim",
 		opts = {
-			ensure_installed = { "lua_ls", "svelte-language-server" },
+			ensure_installed = { "lua_ls" },
 		},
 		dependencies = {
 			{ "mason-org/mason.nvim", opts = {} },
 			"neovim/nvim-lspconfig",
+		},
+	},
+	{
+		"saghen/blink.cmp",
+		version = "*",
+		opts = {
+			keymap = {
+				preset = "default",
+				["<Tab>"] = { "accept", "fallback" },
+				["<CR>"] = { "accept", "fallback" },
+			},
+			sources = {
+				default = { "lsp", "path", "snippets", "buffer" },
+			},
 		},
 	},
 	{
@@ -19,8 +33,8 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				svelte = { "prettierd" },
-        javascript = { "prettierd", "prettier", stop_after_first = true },
-        typescript = { "prettierd", "prettier", stop_after_first = true },
+				javascript = { "prettierd", "prettier", stop_after_first = true },
+				typescript = { "prettierd", "prettier", stop_after_first = true },
 				css = { "prettierd" },
 				html = { "prettierd" },
 			},
